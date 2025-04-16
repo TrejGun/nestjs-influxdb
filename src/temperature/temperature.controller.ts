@@ -1,13 +1,13 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get } from "@nestjs/common";
 
-import { TemperatureService } from './temperature.service';
+import { TemperatureService } from "./temperature.service";
 
-@Controller('temperature')
+@Controller("temperature")
 export class TemperatureController {
   constructor(private readonly temperatureService: TemperatureService) {}
 
   @Get()
-  test() {
+  public createOneRow() {
     return this.temperatureService.createOneRow();
   }
 }

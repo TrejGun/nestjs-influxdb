@@ -12,16 +12,13 @@ export class TemperatureService {
     @Inject(INFLUX_PROVIDER)
     private readonly influxDb: InfluxDB,
     private readonly configService: ConfigService,
-  ) {
-  }
+  ) {}
 
   public async createOneRow() {
     const organization = this.configService.get<string>("INFLUXDB_ORG", "ethberry");
     const writeApi = this.influxDb.getWriteApi(organization, TEMPERATURE_BUCKET);
-    const point1 = new Point("temperature")
-      .tag("sensor_id", "TLM010")
-      .floatField("value", 24);
-    writeApi.writePoint(point1);
+    const point = new Point("temperature").tag("sensor_id", "TLM010").floatField("value", 24);
+    writeApi.writePoint(point);
     await writeApi.close();
   }
 }
