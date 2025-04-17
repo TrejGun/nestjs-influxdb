@@ -2,7 +2,6 @@ import { Module } from "@nestjs/common";
 import { ConfigModule } from "@nestjs/config";
 
 import { AppController } from "./app.controller";
-import { TemperatureModule } from "./temperature/temperature.module";
 import { EnergyModule } from "./energy/energy.module";
 import { OpenaiModule } from "./openai/openai.module";
 
@@ -11,7 +10,6 @@ import { OpenaiModule } from "./openai/openai.module";
     ConfigModule.forRoot({
       envFilePath: `.env.${process.env.NODE_ENV}`,
     }),
-    TemperatureModule,
     EnergyModule,
     OpenaiModule,
   ],
