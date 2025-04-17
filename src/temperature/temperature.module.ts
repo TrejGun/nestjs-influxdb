@@ -1,13 +1,14 @@
-import { Module } from '@nestjs/common';
+import { Module } from "@nestjs/common";
 import { ConfigModule } from "@nestjs/config";
 
 import { influxProvider } from "../influxdb/influx.provider";
-import { TemperatureService } from './temperature.service';
-import { TemperatureController } from './temperature.controller';
+import { TemperatureService } from "./temperature.service";
+import { TemperatureController } from "./temperature.controller";
 
 @Module({
-  imports:[ConfigModule],
+  imports: [ConfigModule],
   controllers: [TemperatureController],
   providers: [influxProvider, TemperatureService],
+  exports: [TemperatureService],
 })
 export class TemperatureModule {}
