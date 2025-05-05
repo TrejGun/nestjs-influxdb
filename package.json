@@ -13,7 +13,7 @@
     "@nestjs/core": "11.1.0",
     "@nestjs/mapped-types": "2.1.0",
     "@nestjs/platform-express": "11.1.0",
-    "@nestjs/swagger": "11.1.5",
+    "@nestjs/swagger": "11.2.0",
     "ai": "4.3.10",
     "openai": "4.96.0",
     "reflect-metadata": "0.2.2",
